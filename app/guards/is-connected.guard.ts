@@ -14,7 +14,7 @@ export class IsConnectedGuard{
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.userService.getRole() !== "USER" || "ADMIN" ){
+      if(this.userService.getRole() !== "USER" || this.userService.getRole() !== "ADMIN" ){
         this.router.navigate(['/']);
         return false;
       } else {
