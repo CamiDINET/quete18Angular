@@ -8,7 +8,7 @@ import { IsConnectedGuard } from './guards/is-connected.guard';
 
 const routes: Routes = [
   {path:'admin', component: AdminPageComponent, canActivate: [IsAdminGuard]},
-  {path:'dashboard', component: DashboardPageComponent, canActivate: [IsAdminGuard || IsConnectedGuard]},
+  {path:'dashboard', component: DashboardPageComponent, canActivate: [IsConnectedGuard]},
   {path:'', component: HomePageComponent},
 
 ];
